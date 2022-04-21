@@ -12,7 +12,7 @@ import java.util.Map;
 public class DependencyLookupDemo {
 
     public static void main(String[] args) {
-        BeanFactory factory = new ClassPathXmlApplicationContext("META-INF/dependency-loopup-context.xml");
+        BeanFactory factory = new ClassPathXmlApplicationContext("META-INF/dependency-lookup-context.xml");
 
         lookupRealTime(factory);
         lookupLazy(factory);

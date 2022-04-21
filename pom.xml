@@ -6,12 +6,13 @@
 
     <groupId>com.mingshashan.practice</groupId>
     <artifactId>practice-spring</artifactId>
-    <version>${reversion}</version>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>practice-spring</name>
+    <packaging>pom</packaging>
+
     <modules>
         <module>ioc-container-overview</module>
     </modules>
-    <name>practice-spring</name>
-    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,15 +29,15 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.projectlombok</groupId>-->
+        <!--            <artifactId>lombok</artifactId>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-log4j2</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 
     <dependencyManagement>
