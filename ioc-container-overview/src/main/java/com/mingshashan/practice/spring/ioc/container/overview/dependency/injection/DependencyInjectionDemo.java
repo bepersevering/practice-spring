@@ -10,6 +10,18 @@ public class DependencyInjectionDemo {
         BeanFactory factory = new ClassPathXmlApplicationContext("META-INF/dependency-injection-context.xml");
 
         UserRepository userRepository = (UserRepository) factory.getBean("userRepository");
+        // 依赖注入
         System.out.println(userRepository.getUsers());
+        System.out.println(userRepository.getBeanFactory());
+        System.out.println(userRepository.getBeanFactory() == factory);
+
+        // 依赖查找，与依赖注入不是来自同一地方
+        // NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.beans.factory.BeanFactory' available
+        // System.out.println(factory.getBean(BeanFactory.class));
+
+        System.out.println(userRepository.getUserObjectFactory().getObject());
+        System.out.println(userRepository.getObjectFactory());
+        System.out.println(userRepository.getObjectFactory().getObject() == factory);
+
     }
 }
