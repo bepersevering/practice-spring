@@ -3,6 +3,7 @@ package com.mingshashan.practice.spring.ioc.container.overview.dependency.inject
 import com.mingshashan.practice.spring.ioc.container.overview.repository.UserRepository;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.Environment;
 
 public class DependencyInjectionDemo {
 
@@ -23,5 +24,11 @@ public class DependencyInjectionDemo {
         System.out.println(userRepository.getObjectFactory());
         System.out.println(userRepository.getObjectFactory().getObject() == factory);
 
+        // 自定义bean: 如 UserRepository
+        // 非bean: BeanFactory（内建依赖）
+        // 内建bean， Environment
+
+        Environment environment = factory.getBean(Environment.class);
+        System.out.println("获取Environment类型的bean: " + environment);
     }
 }
