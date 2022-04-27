@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 静态方法 -->
+    <bean id="user-by-static-method" class="com.mingshashan.practice.spring.ioc.container.overview.domain.User"
+          factory-method="createUser">
+    </bean>
+
+    <!-- 实例静态方法 -->
+    <bean id="user-by-instance-method" class="com.mingshashan.practice.spring.ioc.container.overview.domain.User"
+          factory-bean="defaultUserFactory" factory-method="createUser">
+    </bean>
+
+    <bean id="defaultUserFactory" class="com.mingshashan.practice.spring.bean.factory.DefaultUserFactory">
+
+    </bean>
+
+    <!-- factoryBean方法 -->
+    <bean id="user-by-factory-bean" class="com.mingshashan.practice.spring.bean.factory.UserFactoryBean">
+    </bean>
+    
+</beans>

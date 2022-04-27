@@ -24,9 +24,13 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
+
+    public static User createUser() {
+        User user = new User();
+        user.setId(1L);
+        user.setName("逻辑");
+        return user;
     }
 }
