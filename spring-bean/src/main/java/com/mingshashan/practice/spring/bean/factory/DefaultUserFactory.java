@@ -47,7 +47,7 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
 
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("finalize : UserFactory finalize...");
+        System.out.println("当前 DefaultUserFactory 对象正在被回收...");
         super.finalize();
     }
 }

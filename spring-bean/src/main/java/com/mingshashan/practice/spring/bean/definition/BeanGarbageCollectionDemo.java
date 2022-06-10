@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class BeanGarbageCollectionDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 1.BeanFactory容器
         AnnotationConfigApplicationContext beanFactory = new AnnotationConfigApplicationContext();
-        beanFactory.register(BeanGarbageCollectionDemo.class);
+        beanFactory.register(BeanInitiationDemo.class);
         beanFactory.refresh();
         System.out.println("spring应用上下文已经启动...");
         UserFactory userFactory = beanFactory.getBean(UserFactory.class);
@@ -20,6 +20,8 @@ public class BeanGarbageCollectionDemo {
         System.out.println("spring应用上下文准备销毁...");
         beanFactory.close();
         System.out.println("spring应用上下文已销毁...");
+        Thread.sleep(5000);
         System.gc();
+        Thread.sleep(5000);
     }
 }
