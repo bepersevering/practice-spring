@@ -22,5 +22,11 @@
             <artifactId>spring-context</artifactId>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.mingshashan.practice</groupId>
+            <artifactId>ioc-container-overview</artifactId>
+            <version>${version}</version>
+        </dependency>
     </dependencies>
 </project>
