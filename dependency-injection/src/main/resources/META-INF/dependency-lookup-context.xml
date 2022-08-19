@@ -4,7 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.mingshashan.practice.spring.ioc.container.overview.domain.User" primary="true">
+<!--    <bean id="user" class="com.mingshashan.practice.spring.ioc.container.overview.domain.User" primary="true">-->
+<!--        <property name="id" value="1"/>-->
+<!--        <property name="name" value="小明"/>-->
+<!--    </bean>-->
+
+    <bean id="user" class="com.mingshashan.practice.spring.ioc.container.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="小明"/>
     </bean>

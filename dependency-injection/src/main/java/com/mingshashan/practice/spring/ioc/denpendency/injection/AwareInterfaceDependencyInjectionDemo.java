@@ -22,6 +22,8 @@ public class AwareInterfaceDependencyInjectionDemo implements BeanFactoryAware, 
         // 启动Spring应用上下文
         applicationContext.refresh();
 
+        System.out.println(beanFactory == applicationContext.getBeanFactory());
+
         // 关闭Spring应用上下文
         applicationContext.close();
     }
