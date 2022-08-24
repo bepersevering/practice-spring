@@ -33,4 +33,10 @@ public class User {
         user.setName("逻辑");
         return user;
     }
+
+    public static User createUser(Long id) {
+        User user = new User();
+        user.setId(id);
+        return user;
+    }
 }
