@@ -30,7 +30,7 @@ public class User {
     public static User createUser() {
         User user = new User();
         user.setId(1L);
-        user.setName("逻辑");
+        user.setName("罗辑");
         return user;
     }
 

@@ -50,6 +50,7 @@ public class ObjectProviderDemo {
     private static void lookupByObjectProvider(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<String> objectProvider = applicationContext.getBeanProvider(String.class);
 
-        System.out.printf(objectProvider.getObject());
+        objectProvider.stream().forEach(System.out::println);
+//        System.out.printf(objectProvider.getObject());
     }
 }
