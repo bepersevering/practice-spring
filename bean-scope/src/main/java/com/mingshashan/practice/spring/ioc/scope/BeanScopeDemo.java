@@ -31,7 +31,7 @@ public class BeanScopeDemo {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(BeanScopeDemo.class);
-        applicationContext.refresh();
+//        applicationContext.refresh();
 
         scopeBeanByLookup(applicationContext);
 
