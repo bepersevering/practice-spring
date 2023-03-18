@@ -1,7 +1,12 @@
 package com.mingshashan.practice.spring.ioc.denpendency.lookup;
 
 import com.mingshashan.practice.spring.ioc.container.overview.domain.User;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 
@@ -11,6 +16,27 @@ public class ObjectProviderDemo {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.addApplicationListener(new ApplicationListener<ApplicationEvent>() {
+            @Override
+            public void onApplicationEvent(ApplicationEvent event) {
+                System.out.println(event);
+            }
+        });
+
+        applicationContext.addApplicationListener(new ApplicationListener<ApplicationEvent>() {
+            @Override
+            public void onApplicationEvent(ApplicationEvent event) {
+
+            }
+        });
+
+        BeanFactoryPostProcessor beanFactoryPostProcessor = new BeanFactoryPostProcessor() {
+            @Override
+            public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+                beanFactory.registerSingleton("threeBody", String.class);
+            }
+        };
+        applicationContext.addBeanFactoryPostProcessor(beanFactoryPostProcessor);
 
         applicationContext.register(ObjectProviderDemo.class);
 
